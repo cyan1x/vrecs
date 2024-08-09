@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply bg-[linear-gradient(62deg,_#8ec5fc_0%,_#e0c3fc_100%)];
+  }
+
+  a {
+    @apply text-sky-500;
+  }
+}
