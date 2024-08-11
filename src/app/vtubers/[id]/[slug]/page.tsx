@@ -4,6 +4,7 @@ import { Card } from "../../../components/Card";
 import Link from "next/link";
 import { Metadata } from "next";
 import { getVTuber, getVTuberSlug } from "../getVtuber";
+import { VTuberAvatar } from "@/app/components/VTuberAvatar";
 
 export function generateStaticParams() {
   return vtubers.map((vtuber) => ({
@@ -22,7 +23,7 @@ export function generateMetadata({
   };
 }
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function VTuber({ params }: { params: { id: string } }) {
   const vtuber = getVTuber(params.id);
 
   if (!vtuber) {
@@ -76,34 +77,27 @@ export default function Page({ params }: { params: { id: string } }) {
   });
 
   const toEmbed = (url: string) => (
-    <iframe
-      key={url}
-      className="block max-w-full"
-      width="480"
-      height="360"
-      src={url}
-      title="YouTube video player"
-      // frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerPolicy="strict-origin-when-cross-origin"
-      allowFullScreen
-    />
+    <div key={url} className="m-1 overflow-hidden rounded-lg shadow-md">
+      <iframe
+        // key={url}
+        className="block max-w-full"
+        width="480"
+        height="360"
+        src={url}
+        title="YouTube video player"
+        // frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
+    </div>
   );
 
   return (
     <Card>
       <div className="grid w-[36rem] grid-cols-vtubercard gap-2 grid-areas-vtubercard">
         <div className="flex items-center justify-center grid-in-image">
-          <div className="rounded-[50%] border-[3.5px] border-double border-[transparent] bg-[linear-gradient(170deg,_rgba(223,_249,_255,_0.95),_rgba(236,_227,_250,_0.95)),_radial-gradient(circle_farthest-corner_at_0.2%_0.5%,_rgba(123,_11,_208,_0.3)_3.7%,_rgba(54,_214,_235,_0.4)_92.7%)] bg-origin-border">
-            <div
-              style={
-                {
-                  backgroundImage: `url(/${vtuber.imgName})`,
-                } as React.CSSProperties
-              }
-              className={`box-content max-h-full min-h-[7.5rem] min-w-[7.5rem] max-w-[7.5rem] rounded-[50%] bg-contain bg-[center_center] bg-no-repeat`}
-            ></div>
-          </div>
+          <VTuberAvatar vtuber={vtuber} />
         </div>
 
         <div className="p-3 pl-4 grid-in-info">
