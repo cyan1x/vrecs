@@ -38,6 +38,11 @@ export interface VTuber {
   genres: Partial<{ [genre in Genre]: Frequency }>;
   tags: Tag[];
   links: Partial<{ [link in "youtube" | "twitch" | "twitter"]: string }>;
+  youtube?: Partial<{
+    songs: string[];
+    videos: string[];
+    streams: string[];
+  }>;
 }
 
 export const vtubers: VTuber[] = [
@@ -48,15 +53,20 @@ export const vtubers: VTuber[] = [
     description:
       "Possibly the most beginner-friendly VTuber in hololive. Speaks clearly and slowly. Also pretty soft-spoken and occasionally does ASMR streams.",
     genres: {
-      sf6: "frequent",
-      gta: "frequent",
       variety: "frequent",
-      zatsudan: "rare",
+      zatsudan: "infrequent",
+      asmr: "infrequent",
     },
     tags: [],
     links: {
       youtube: "https://www.youtube.com/@NekomataOkayu",
       twitter: "https://twitter.com/nekomataokayu",
+    },
+    youtube: {
+      songs: ["https://www.youtube.com/embed/0scxODT68X4?si=-gcmu0XClIblXQ9W"],
+      streams: [
+        "https://www.youtube.com/embed/RmbJFdH5kdM?si=klUZUcz3nAKb_z6t",
+      ],
     },
   },
   {

@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative flex h-screen items-center justify-center">
+        <div className="relative flex min-h-screen items-center justify-center p-6">
           <Link href="/">
             <h1 className="absolute bottom-2 right-3 text-xl text-gray-600/40">
               return to index

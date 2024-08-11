@@ -17,6 +17,7 @@ const config: Config = {
           "genres genres",
           "tags tags",
           "links links",
+          "video video",
         ],
       },
       gridTemplateColumns: {
