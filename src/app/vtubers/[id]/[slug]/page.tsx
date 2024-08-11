@@ -18,8 +18,15 @@ export function generateMetadata({
 }: {
   params: { id: string };
 }): Metadata {
+  const vtuber = getVTuber(params.id)!;
   return {
-    title: `${getVTuber(params.id)?.name} | VRecs`,
+    title: `${vtuber.name} | VRecs`,
+    // OpenGraph
+    openGraph: {
+      images: [`${process.env.HOST_URL}${vtuber.imgName}`],
+      title: vtuber.name,
+      type: "website",
+    },
   };
 }
 
