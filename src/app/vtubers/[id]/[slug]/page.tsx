@@ -3,13 +3,13 @@ import React from "react";
 import { Card } from "../../../components/Card";
 import Link from "next/link";
 import { Metadata } from "next";
-import { getVTuber, getVTuberSlug } from "../getVtuber";
+import { getVTuber } from "../getVtuber";
 import { VTuberAvatar } from "@/app/components/VTuberAvatar";
 
 export function generateStaticParams() {
   return vtubers.map((vtuber) => ({
     id: String(vtuber.id),
-    slug: getVTuberSlug(vtuber),
+    slug: vtuber.slug,
   }));
 }
 

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getVTuber, getVTuberSlug } from "./getVtuber";
+import { getVTuber } from "./getVtuber";
 import { vtubers } from "@/data/vtubers";
 
 export function generateStaticParams() {
@@ -9,6 +9,6 @@ export function generateStaticParams() {
 }
 
 export function GET(request: Request, { params }: { params: { id: string } }) {
-  const slug = getVTuberSlug(getVTuber(params.id)!);
+  const slug = getVTuber(params.id)!.slug;
   redirect(`${params.id}/${slug}`);
 }

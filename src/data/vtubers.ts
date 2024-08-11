@@ -32,6 +32,7 @@ type Tag = (typeof tags)[number];
 export interface VTuber {
   id: number;
   name: string;
+  slug: string;
   org: string;
   imgName: string;
   description: string;
@@ -193,6 +194,7 @@ export const vtubers: VTuber[] = [
   },
 ].map((vtuber, index) => {
   (vtuber as VTuber).id = index + 1;
+  (vtuber as VTuber).slug = vtuber.name.toLowerCase().split(" ").join("-");
   return vtuber as VTuber;
 });
 
