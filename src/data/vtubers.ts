@@ -79,10 +79,8 @@ export const vtubers: VTuber[] = [
       twitter: "https://twitter.com/nekomataokayu",
     },
     youtube: {
-      songs: ["https://www.youtube.com/embed/0scxODT68X4?si=-gcmu0XClIblXQ9W"],
-      streams: [
-        "https://www.youtube.com/embed/RmbJFdH5kdM?si=klUZUcz3nAKb_z6t",
-      ],
+      songs: ["https://www.youtube.com/embed/0scxODT68X4"],
+      streams: ["https://www.youtube.com/embed/RmbJFdH5kdM"],
     },
   },
   {
@@ -102,6 +100,11 @@ export const vtubers: VTuber[] = [
       twitch: "https://www.twitch.tv/shirona_shizuku",
       twitter: "https://twitter.com/shizuku_shirona",
     },
+    youtube: {
+      songs: ["https://www.youtube.com/embed/djz2RRSsZLk"],
+      videos: ["https://www.youtube.com/embed/AyzLZd-lhFw"],
+      streams: ["https://www.youtube.com/embed/lXBM2W00f40"],
+    },
   },
   {
     name: "Kanae",
@@ -120,6 +123,10 @@ export const vtubers: VTuber[] = [
       youtube: "https://www.youtube.com/@Kanae",
       twitch: "https://www.twitch.tv/kanae_2434",
       twitter: "https://twitter.com/Kanae_2434",
+    },
+    youtube: {
+      songs: ["https://www.youtube.com/embed/3zZ34hwXdxQ"],
+      streams: ["https://www.youtube.com/embed/kwPFlninAmk"],
     },
   },
   {
@@ -169,6 +176,13 @@ export const vtubers: VTuber[] = [
     links: {
       youtube: "https://www.youtube.com/@AmaneKanata",
       twitter: "https://twitter.com/amanekanatach",
+    },
+    youtube: {
+      songs: [
+        "https://www.youtube.com/embed/Pb-n8O4C4To",
+        "https://www.youtube.com/embed/tGXZNHNhI0I",
+      ],
+      videos: ["https://www.youtube.com/embed/rgHoRlKCnEw"],
     },
   },
   {
