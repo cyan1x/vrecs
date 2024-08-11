@@ -29,16 +29,31 @@ type Genre = (typeof genres)[number];
 export type Frequency = (typeof frequencies)[number];
 type Tag = (typeof tags)[number];
 
+/**
+ * Represents a VTuber.
+ *
+ * @interface
+ */
 export interface VTuber {
+  /** The VTuber's incremental ID. */
   id: number;
+  /** The VTuber's full name in romaji + western order. */
   name: string;
+  /** The VTuber's `name`, converted to a slug. */
   slug: string;
+  /** The VTuber's organization, group, or agency. */
   org: string;
+  /** The filename of the VTuber's image in `/public`. */
   imgName: string;
+  /** A short description of the VTuber. */
   description: string;
+  /** The genres of the VTuber's content, mapped by frequency. */
   genres: Partial<{ [genre in Genre]: Frequency }>;
+  /** A list of miscellaneous tags for the VTuber. */
   tags: Tag[];
+  /** The VTuber's social media links. */
   links: Partial<{ [link in "youtube" | "twitch" | "twitter"]: string }>;
+  /** YouTube embed links for recommended content created by the VTuber. */
   youtube?: Partial<{
     songs: string[];
     videos: string[];
