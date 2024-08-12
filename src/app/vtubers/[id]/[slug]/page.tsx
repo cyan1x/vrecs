@@ -102,7 +102,7 @@ export default function VTuber({ params }: { params: { id: string } }) {
 
   return (
     <Card>
-      <div className="grid w-[36rem] grid-cols-vtubercard gap-2 grid-areas-vtubercard">
+      <div className="grid-cols-vtubercard-mobile grid-areas-vtubercard-mobile grid w-full gap-1.5 gap-x-3 md:w-[36rem] md:grid-cols-vtubercard md:grid-areas-vtubercard">
         <div className="flex items-center justify-center grid-in-image">
           <VTuberAvatar vtuber={vtuber} />
         </div>
@@ -113,7 +113,7 @@ export default function VTuber({ params }: { params: { id: string } }) {
             <h3 className="text-sm text-gray-500">{vtuber.org}</h3>
           </div>
 
-          <div className="desc">{vtuber.description}</div>
+          <div>{vtuber.description}</div>
         </div>
 
         <div className="grid-in-genres">
@@ -127,7 +127,7 @@ export default function VTuber({ params }: { params: { id: string } }) {
         </div>
 
         {vtuber.youtube && (
-          <div className="grid-in-video mt-2 justify-center">
+          <div className="mt-2 justify-center grid-in-video">
             {vtuber.youtube.songs && (
               <>
                 <h3 className="text-sm text-gray-500">Songs:</h3>

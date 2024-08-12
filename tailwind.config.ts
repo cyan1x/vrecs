@@ -19,9 +19,18 @@ const config: Config = {
           "links links",
           "video video",
         ],
+        "vtubercard-mobile": [
+          "image",
+          "info",
+          "genres",
+          "tags",
+          "links",
+          "video",
+        ],
       },
       gridTemplateColumns: {
         vtubercard: "auto 1fr",
+        "vtubercard-mobile": "1fr",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

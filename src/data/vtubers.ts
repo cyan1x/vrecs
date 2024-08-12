@@ -150,7 +150,7 @@ export const vtubers: VTuber[] = [
     org: "vspo!",
     imgName: "tsumugi_kokage.jpg",
     description:
-      "One of vspo!'s newest members and one of its best Valorant players alongside [Yumeno Akari](https://twitter.com/AKARINdaooo), peaking at Immortal 3. Highly recommended if you enjoy watching Valorant streams and want to learn basic terminology and callouts.",
+      "One of vspo!'s newest members and one of its best Valorant players alongside Yumeno Akari, peaking at Immortal 3. Highly recommended if you enjoy watching Valorant streams and want to learn basic terminology and callouts.",
     genres: {
       valorant: "frequent",
       zatsudan: "infrequent",
