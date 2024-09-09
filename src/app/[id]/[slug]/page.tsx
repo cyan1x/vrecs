@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getVTuber } from "../getVtuber";
 import { VTuberAvatar } from "@/app/components/VTuberAvatar";
+import { YouTubeEmbeds } from "./YouTubeEmbeds";
 
 export function generateStaticParams() {
   return vtubers.map((vtuber) => ({
@@ -83,23 +84,6 @@ export default function VTuber({ params }: { params: { id: string } }) {
     );
   });
 
-  const toEmbed = (url: string) => (
-    <div key={url} className="m-1 overflow-hidden rounded-lg shadow-md">
-      <iframe
-        // key={url}
-        className="block max-w-full"
-        width="480"
-        height="360"
-        src={url}
-        title="YouTube video player"
-        // frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      />
-    </div>
-  );
-
   return (
     <Card>
       <div className="grid w-full grid-cols-vtubercard-mobile gap-1.5 gap-x-3 grid-areas-vtubercard-mobile md:w-[36rem] md:grid-cols-vtubercard md:grid-areas-vtubercard">
@@ -126,34 +110,7 @@ export default function VTuber({ params }: { params: { id: string } }) {
           {links}
         </div>
 
-        {vtuber.youtube && (
-          <div className="mt-2 justify-center grid-in-video">
-            {vtuber.youtube.songs && (
-              <>
-                <h3 className="text-sm text-gray-500">Songs:</h3>
-                <div className="flex flex-col items-center p-4">
-                  {vtuber.youtube?.songs?.map((song) => toEmbed(song))}
-                </div>
-              </>
-            )}
-            {vtuber.youtube.videos && (
-              <>
-                <h3 className="text-sm text-gray-500">Videos:</h3>
-                <div className="flex flex-col items-center p-4">
-                  {vtuber.youtube?.videos?.map((video) => toEmbed(video))}
-                </div>
-              </>
-            )}
-            {vtuber.youtube.streams && (
-              <>
-                <h3 className="text-sm text-gray-500">Streams:</h3>
-                <div className="flex flex-col items-center p-4">
-                  {vtuber.youtube?.streams?.map((stream) => toEmbed(stream))}
-                </div>
-              </>
-            )}
-          </div>
-        )}
+        <YouTubeEmbeds vtuber={vtuber} />
       </div>
     </Card>
   );
